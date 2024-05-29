@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>voter Registration</title>
+ 
+
+</head>
+<body>
+	<h1>Employee Registration</h1>
+	<form th:action="@{/status}" th:object="${employee}"  method="POST">
+
+<label for="name">Employee Name</label>
+<input type="text" placeholder="Enter Employee Name" name="name" th:field="*{name}">
+<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+<br>
+<br>
+<label for="position">Employee Address</label>
+<input type="text" placeholder="Enter Employee Address" name="position" th:field="*{position}">
+<span th:if="${#fields.hasErrors('position')}" th:errors="*{position}"></span>
+<br>
+
+<br>
+<label for="department">Employee Department</label>
+<input type="text" placeholder="Enter Employee Department" name="department" th:field="*{department}">
+<span th:if="${#fields.hasErrors('department')}" th:errors="*{department}"></span>
+
+<br>
+<br>
+<label for="contact">Employee Contact</label>
+<input type="text" placeholder="Enter Employee Contact" name="contact" th:field="*{contact}">
+<span th:if="${#fields.hasErrors('contact')}" th:errors="*{contact}"></span>
+<input type="submit">
+
+
+</form>
+	
+</body>
+</html>
